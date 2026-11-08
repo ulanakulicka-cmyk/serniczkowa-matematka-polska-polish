@@ -52,6 +52,7 @@
 </button>
 
 <div id="game" style="display:none;">
+    <h2>📚 Zadania: <span id="zadania">0</span>/50</h2>
     <h2>🍰 Serniczki: <span id="serniczki">0</span></h2>
     <h2>💰 Pieniądze: <span id="pieniadze">0</span></h2>
 
@@ -65,7 +66,7 @@
 <script>
 let serniczki = 0;
 let pieniadze = 0;
-
+let zadania = 0;
 function startGame() {
     document.getElementById("game").style.display = "block";
 }
@@ -110,7 +111,11 @@ function kop() {
 
         serniczki++;
         pieniadze += nagroda;
-
+zadania++;
+document.getElementById("zadania").textContent = zadania;
+if(zadania >= 50){
+    alert("🎉 Gratulacje! Ukończyłeś etap 1!");
+}
         document.getElementById("serniczki").textContent = serniczki;
         document.getElementById("pieniadze").textContent = pieniadze;
 
